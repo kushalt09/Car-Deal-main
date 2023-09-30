@@ -1,0 +1,26 @@
+<header class="header ">
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-6 header-info">
+          <a href="mailto:info@cardeal.com" class="mr-3">info@cardeal.com</a>
+          <span>Call at: +977 9840715917 </span>
+        </div>
+        <div class="header-buttons col-md-6 d-flex justify-content-end">
+        {% if user.is_authenticated %}
+          <h4 class="mr-5" style="font-size: 17px;">
+            Welcome, <span style="color: aliceblue;">{{ user.username }}</span> 
+          </h4>
+          <a class="btn btn-accent" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+          <h4 class="mr-5" style="font-size: 17px;">
+            Welcome, <span style="color: aliceblue;">Guest</span> 
+          </h4>
+          <a class="btn btn-accent mr-3" href="{% url 'login' %}">Sign In</a>
+          <a class="btn btn-accent" href="{% url 'register' %}">Sign Up</a>
+        {% endif %}
+        
+        
+        </div>
+      </div>
+    </div>
+  </header>

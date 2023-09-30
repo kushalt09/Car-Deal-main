@@ -1,0 +1,89 @@
+Hatchback:
+a. Company: Volkswagen
+Model: Volkswagen Golf
+Details: The Volkswagen Golf is a popular compact hatchback known for its practicality, comfort, and sporty driving dynamics. It offers a range of engine options, advanced safety features, and a well-designed interior with ample cargo space.
+
+b. Company: Honda
+Model: Honda Civic Hatchback
+Details: The Honda Civic Hatchback is a stylish and versatile hatchback that combines a sleek design with practicality. It features a spacious cabin, a responsive handling, and a range of advanced technology and safety features.
+
+Sedan:
+a. Company: Toyota
+Model: Toyota Camry
+Details: The Toyota Camry is a midsize sedan known for its reliability, comfortable ride, and fuel efficiency. It offers a choice of efficient engines, a spacious interior, and a host of advanced safety and convenience features.
+
+b. Company: BMW
+Model: BMW 3 Series
+Details: The BMW 3 Series is a luxury compact sedan that delivers a blend of performance, luxury, and refinement. It offers powerful engine options, precise handling, upscale interior materials, and advanced infotainment and driver-assistance technologies.
+
+SUV:
+a. Company: Ford
+Model: Ford Escape
+Details: The Ford Escape is a compact SUV that offers a comfortable and versatile driving experience. It features a range of efficient engine options, a spacious cabin, user-friendly technology, and available advanced safety features.
+
+b. Company: Jeep
+Model: Jeep Grand Cherokee
+Details: The Jeep Grand Cherokee is a midsize SUV known for its off-road capability, upscale interior, and powerful performance. It offers a range of engine choices, luxurious amenities, advanced 4x4 systems, and towing capabilities.
+
+Crossover:
+a. Company: Nissan
+Model: Nissan Rogue
+Details: The Nissan Rogue is a compact crossover that offers a comfortable and well-equipped driving experience. It features a stylish design, ample cargo space, advanced safety technologies, and a smooth ride.
+
+b. Company: Mazda
+Model: Mazda CX-5
+Details: The Mazda CX-5 is a compact crossover that stands out with its striking design and engaging driving dynamics. It offers a refined interior, fuel-efficient engine options, advanced safety features, and a premium feel.
+
+Coupe:
+a. Company: Ford
+Model: Ford Mustang
+Details: The Ford Mustang is an iconic muscle car with a classic coupe design. It combines powerful performance with retro-inspired styling, offering a range of engines, aggressive handling, and a driver-focused interior.
+
+b. Company: Audi
+Model: Audi A5 Coupe
+Details: The Audi A5 Coupe is a luxury two-door coupe that showcases elegant styling and a sophisticated driving experience. It features a premium interior, advanced technology, available Quattro all-wheel drive, and a range of engine options.
+
+Convertible:
+a. Company: Mazda
+Model: Mazda MX-5 Miata
+Details: The Mazda MX-5 Miata is a popular convertible sports car known for its nimble handling, affordability, and open-top driving experience. It features a lightweight design, responsive steering, and a retractable soft top or hardtop roof option.
+
+b. Company: Mercedes-Benz
+Model: Mercedes-Benz SL-Class
+Details: The Mercedes-Benz SL-Class is a luxury convertible that offers a blend of performance and comfort. It combines elegant styling, advanced technology, powerful engines, and a retractable hardtop roof for a refined driving experience.
+
+Minivan:
+a. Company: Chrysler
+Model: Chrysler Pacifica
+Details: The Chrysler Pacifica is a spacious and family-friendly minivan that offers versatility, comfort, and modern features. It features a flexible seating arrangement, advanced safety technologies, a smooth ride, and available hybrid powertrain options.
+
+b. Company: Honda
+Model: Honda Odyssey
+Details: The Honda Odyssey is a well-regarded minivan known for its reliability and family-oriented features. It offers a roomy and configurable interior, innovative storage solutions, advanced safety systems, and comfortable seating for up to eight passengers.
+
+Pickup Truck:
+a. Company: Ford
+Model: Ford F-150
+Details: The Ford F-150 is one of the best-selling pickup trucks in the United States, renowned for its capability, durability, and versatility. It offers a range of engine options, impressive towing and payload capacities, advanced technology, and various trim levels to suit different needs.
+
+b. Company: Chevrolet
+Model: Chevrolet Silverado
+Details: The Chevrolet Silverado is a full-size pickup truck known for its ruggedness and power. It offers multiple engine choices, spacious interiors, advanced towing and hauling capabilities, and a range of features to enhance utility and comfort.
+
+Sports Car:
+a. Company: Porsche
+Model: Porsche 911
+Details: The Porsche 911 is an iconic sports car that blends timeless design, exhilarating performance, and precision handling. It offers various trims and engine options, advanced driving technologies, and a well-appointed interior that caters to both luxury and sportiness.
+
+b. Company: Chevrolet
+Model: Chevrolet Corvette
+Details: The Chevrolet Corvette is a legendary American sports car that delivers exceptional performance and head-turning styling. It features a powerful V8 engine, aerodynamic design, advanced performance technologies, and a driver-focused cockpit.
+
+Electric Car:
+a. Company: Tesla
+Model: Tesla Model 3
+Details: The Tesla Model 3 is an all-electric sedan that has gained popularity for its impressive range, acceleration, and advanced technology features. It offers a minimalist interior, a large touchscreen display, autopilot capabilities, and over-the-air software updates.
+
+b. Company: Nissan
+Model: Nissan Leaf
+Details: The Nissan Leaf is a widely recognized electric hatchback known for its affordability and practicality. It offers an all-electric drivetrain, a comfortable cabin, commendable range, and features like regenerative braking and e-Pedal for efficient driving.

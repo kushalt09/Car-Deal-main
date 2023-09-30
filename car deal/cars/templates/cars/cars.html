@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="cars-page">
+  <div class="banner">
+    <img src="{% static './assets/images/bg-banner.png' %}" alt="" class="img-fluid w-100">
+    <h1 class="text-center">
+      cars
+    </h1>
+  </div>
+  <section class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-lg-8 mb-2">
+        <section class="cars">
+          <!-- car 1 -->
+          {% for car in cars %}
+          <div class="card border-0 text-center ml-3 mr-3">
+            <div class="feature-text">
+              <a href="{% url 'carlist_detail' car.id %}">
+                <img src="{{ car.photo.url }}" class="card-img-top" alt="team-member">
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ car.name }}</h5>
+              <p class="card-text">{{ car.company_name }}</p>
+              <h4 class="card-title">Rs.{{ car.price }}</h4>
+              <div class="car-description mt-2">
+                <button class="btn btn-accent"> Categories: {{ car.categories }}</button>
+                <button class="btn btn-accent"> Year: {{ car.year }}</button>
+              </div>
+              <div class="car-description mt-2">
+                <button class="btn btn-accent"> Km_driven: {{ car.kms_driven }}</button>
+                <button class="btn btn-accent"> Fuel_type: {{ car.fuel_type }} </button>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </section>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="text-left font-weight-bolder text-black-50">
+              Search cars
+            </p>
+            <form method="GET" action="{% url 'search' %}">
+              <div class="form-group">
+                <select name="name" id="inputState" class="form-control">
+                  <option selected disabled hidden>Name</option>
+                  {% for car in all_cars %}
+                  <option value="{{ car.name }}">{{ car.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="company_name" id="inputState" class="form-control">
+                  <option selected disabled hidden>Company</option>
+                  {% for car in all_cars %}
+                  <option value="{{ car.company_name }}">{{ car.company_name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="categories" id="inputState" class="form-control">
+                  <option selected disabled hidden>Category</option>
+                  {% for car in all_cars %}
+                  <option value="{{ car.categories }}">{{ car.categories }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <button class="btn btn-accent btn-block">Search</button>
+            </form>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container section pagination-section mt-3">
+    <nav aria-label="Page navigation ">
+      <ul class="pagination justify-content-center">
+        {% if cars.has_previous %}
+        <li class="page-item ">
+          <a class="page-link" href="?page={{ cars.previous_page_number }}" tabindex="-1">Previous</a>       
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+        {% endif %}
+
+        {% for num in cars.paginator.page_range %}
+          {% if num == cars.number %}
+            <li class="page-item active">
+              <span class="page-link">
+                {{ num }}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% if cars.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ cars.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <span class="page-link">Next</span>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</main>
+{% endblock %}

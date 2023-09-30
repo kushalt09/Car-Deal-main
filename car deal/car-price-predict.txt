@@ -1,0 +1,117 @@
+Django documentation---->(https://docs.djangoproject.com/en/4.2/)
+<!-------Day 1(Setup)-------->
+Create folder where you want your project to be
+Install pipenv
+  pip install pipenv
+Create a shell(To create a virtual environment)
+  pipenv shell
+Install pillow library(To handle images)
+  pipenv install pillow
+Install Django
+  pipenv install Django
+Inorder to start project
+  django-admin startproject cars
+By default it uses sqlite3 for database
+So, download postgresql and pgadmin
+Create database in pg4admin 
+---->cardeals in this case
+        Head into settings.py as by default it uses sqlite 3 and we are going to use postgresql.
+In database section edit.It should look like
+	DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cardeals',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+    }
+}
+
+
+Download psycopg2 inorder to run server without issue(as it says error loading psycopg1)
+  pipenv install psycopg2
+It will show migration error(it will give error while creating superuser)
+  python manage.py makemigrations
+  python manage.py migrate
+
+
+
+<!-------Day 2(Admin Panel)-------->
+	python manage.py superuser
+    Give username and password
+Incase you dont like default admin theme. You can customize it too.
+	pipenv install djangocms-admin-style
+We need to mention directory in TEMPLATES
+       'DIRS': ['templates'], (In this case create a folder and name it as templates)
+Add djangocms_admin_style to your INSTALLED_APPS just before 'django.contrib.admin'
+We'll need to migrate
+	python manage.py migrate
+	python manage.py runserver
+Since we are going to edit admin side of django
+(https://github.com/django-cms/djangocms-admin-style/blob/master/djangocms_admin_style/templates/admin/base_site.html)
+This is the github link for the templates we are going to use
+We can customize it like how we wish
+
+To deploy static files
+In settings.py 
+import os and include 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') (below STATIC_URL='static/'
+We need to allocate location for static files too.
+STATICFILES_DIRS = {
+    os.path.join(BASE_DIR, 'cars/static'),
+}
+Create staic files in cars directory manusally
+and also 
+python manage.py collectstatic
+Folder named static will be created.All the files that were hidden while editing will come here. We can edit but it is not good practice to edit this as they will get overwrite in next command run so no point of editing them
+ 
+
+
+
+<!-------Day 3(Webpages in Django app)-------->
+	python manage.py startapp webpages
+
+mention it in INSTALLED_APPS in setting
+'webpages.apps.WebpagesConfig',
+
+In cars/urls.py
+    path('', include('webpages.urls')),
+Inorder to configure
+urlpatterns = [....]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+** we will need to import settings, static, include
+from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+
+
+Now use the templates 
+Video: 03 03
+
+
+Now we need to extract our templates file
+js, assets aand css
+to the cars/static
+We need to run the command collectstaic otherwise they are just standing there
+
+
+
+ckeditor was installed for description
+pipenv install django-ckeditor
+add ckeditor to your installed apps
+then,
+from ckeditor.fields import RichTextField
+
+
+For facebook/google login
+-----> pipenv insrall django-allauth
+INSTALLED APPS =[
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+]
+
+

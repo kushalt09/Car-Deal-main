@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="searchpage">
+    <div class="banner">
+      <img src="{% static './assets/images/bg-banner.png'%}" alt="" class="img-fluid w-100">
+      <h1 class="text-center">
+        Search Result
+      </h1>
+    </div>
+
+    <section class="searchbox container mt-5 p-3 bg-accent">
+      <form method="GET" action="{% url 'search' %}">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <select name="name" id="inputState" class="form-control">
+              <option selected disabled hidden>Name</option>
+              {% for name in name_search %}
+              <option value="{{name}}">{{name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <select name="company_name" id="inputState" class="form-control">
+              <option selected disabled hidden>Company</option>
+              {% for company_name in company_name_search %}
+              <option value="{{company_name}}">{{company_name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <select name="categories" id="inputState" class="form-control">
+              <option selected disabled hidden>Category</option>
+              {% for categories in categories_search %}
+              <option value="{{categories}}">{{categories}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="text-center">
+
+          <button class="btn btn-light">Search</button>
+        </div>
+      </form>
+      
+    </section>
+
+
+
+    <section class="search-results container mt-3 grid">
+
+
+
+        <!-- car 1 -->
+        {% for car in cars %}
+        <div class="card border-0 text-center ml-3 mr-3">
+            <div class="feature-text">
+              <a href="{% url 'carlist_detail' car.id%}">
+              <img src="{{car.photo.url}}" class="card-img-top" alt="team-member">
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{car.name}}</h5>
+              <p class="card-text">{{car.company_name}}</p>
+              <h4 class="card-title">Rs.{{car.price}}</h4>      
+              <div class="car-description mt-2">
+                <button class="btn btn-accent"> Categories: {{car.categories}}</button>
+                <button class="btn btn-accent"> Year: {{car.year}}</button>
+                
+              </div>
+              <div class="car-description mt-2">
+                <button class="btn btn-accent"> Km_driven: {{car.kms_driven}}</button>
+                <button class="btn btn-accent"> Fuel_type: {{car.fuel_type}} </button>
+                
+              </div>
+            </div>
+          </div>
+          {% endfor%}
+  
+
+
+
+
+
+    </section>
+  </main>
+
+
+{% endblock%}

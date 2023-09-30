@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post">
+        <div class="col-md-10 form-group" style="text-align: center">
+            <label><b>Select the company:</b> </label><br>
+            <select class="selectpicker form-control" id="company" name="company" required="1"
+                    onchange="load_car_models(this.id,'car_models')">
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+    </form>
+</body>
+</html>

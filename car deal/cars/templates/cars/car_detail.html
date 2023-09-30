@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="single-page-cars">
+    <div class="banner">
+      <img src="{% static './assets/images/bg-banner.png' %}" alt="" class="img-fluid w-100">
+      <h1 class="text-center">
+        {{car.name}}
+      </h1>
+    </div>
+
+
+
+    <section class="head container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <h1 class="text-center">{{car.name}}</h1>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <h1 class="text-accent text-center">
+            Rs. {{car.price}}
+          </h1>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <img src="{{car.photo.url}}" class="img-fluid" alt="imageee">
+        </div>
+      </div>
+    </section>
+    <section class="video container text-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{car.video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+    <section class="descritpion container">
+      <h4>Description</h4>
+      <p class="mt-2 mb-2">
+        {{car.description | safe }}
+      </p>
+
+    </section>
+
+    <section class="container w-50">
+
+      <div class="car-description mt-2">
+        <button class="btn btn-accent"> Categories: {{car.categories}} </button>
+        <button class="btn btn-accent"> Year: {{car.year}}</button>
+        
+      </div>
+      <div class="car-description mt-2">
+        <button class="btn btn-accent"> Km_driven: {{car.kms_driven}}</button>
+        <button class="btn btn-accent"> Fuel_type: {{car.fuel_type}} </button>
+        
+      </div>
+
+    </section>
+
+    <section class="car-form container mt-5 mb-5">
+      <div class="row">
+        
+        <form method="POST" action="{% url 'bookcar' %}" class="col-md-8 offset-md-2">
+          <h3 class="pt-2 pb-2">Fill the Form and reach out</h3>
+          {% csrf_token %}
+          
+          
+          {% if user.is_authenticated %}
+          <input type="hidden" name="user_id" value="{{user.id}}">
+          {% else %}
+          <input type="hidden" name="user_id" value="00">
+          {% endif %}
+          <input type="hidden" name="car_id" value="{{car.id}}">
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              {% if user.is_authenticated %}
+              <input name="first_name" type="text" value="{{user.first_name}}" class="form-control" placeholder="First Name" required>
+              {% else %}
+              <input name="first_name" type="text" class="form-control" placeholder="First Name" required>
+              {% endif %}
+            </div>
+            <div class="form-group col-md-4">
+              {% if user.is_authenticated %}
+              <input name="last_name" type="text" value="{{user.last_name}}" class="form-control" placeholder="Last Name" required>
+              {% else %}
+              <input name="last_name" type="text" class="form-control" placeholder="Last Name" required>
+              {% endif %}
+
+            </div>
+            <div class="form-group col-md-4">
+              {% if user.is_authenticated %}
+              <input name="email" type="email" value="{{user.email}}"  class="form-control" placeholder="Email" required>
+              {% else %}
+              <input name="email" type="email" class="form-control" placeholder="Email" required>
+              {% endif %}
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <select name="car_name"  class="form-control">
+              <!-- <option selected disabled hidden>Select Car</option> -->
+              <option value="{{car.name}}">{{car.name}}</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+
+                <input name="address" type="text" class="form-control" placeholder="Address" required>
+
+        </div>
+        <div class="form-group col-md-4">
+            <input name="your_offer" type="number" value="{{car.price}}" class="form-control" placeholder="Your offer">
+        </div>
+        <div class="form-group col-md-4">
+
+
+                <input name="phone" type="number" class="form-control" placeholder="Phone Number" required>
+
+              
+            </div>
+
+          </div>
+
+          <div class="form-group pt-2">
+            <textarea name="message" class="form-control" rows="3" placeholder="Details Message"></textarea>
+          </div>
+          <div class="text-center">
+            <button value="submit" type="submit" class="btn btn-accent">Contact Us</button>
+          </div>
+
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+
+{% endblock%}

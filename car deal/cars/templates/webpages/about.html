@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="contact-us">
+    <div class="banner">
+      <img src="{% static './assets/images/bg-banner.png' %}" alt="" class="img-fluid w-100">
+
+
+      <h1 class="text-center">
+        About Us
+      </h1>
+    </div>
+    <section class="container mt-5 mb-5">
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <img src="{% static './assets/images/wideoptions.png' %}" alt="" width="300" height="200" >
+        </div>
+        <div class="col-md-8 animate__animated animate__fadeInRight">
+          <h2 class="text-center">Endless Choices</h2>
+          <p>When it comes to buying a second-hand car, the options seem virtually endless. With a wide range of makes, models, and years to choose from, it can be an exciting yet overwhelming process. Whether you're looking for a budget-friendly option, a specific brand or model, or a reliable vehicle with low mileage, the car deal offers numerous possibilities. Don't settle for limited choices. Discover seamless options and find your dream car with us today!
+          </p>
+        </div>
+      </div>
+      <div class="row mt-5">
+
+        <div class="col-md-8  animate__animated animate__fadeInLeft  animate__delay-1s">
+          <h2 class="text-center">Sell Car</h2>
+          <p> Look no further! We offer a hassle-free and reliable platform for selling your vehicle. With our dedicated team of experts, we ensure that you receive the best valuation for your car. Say goodbye to the complexities of private selling or negotiating with multiple buyers.  Sell your car with us and experience a seamless transaction, ensuring that you receive the best value for your vehicle. Don't miss out on this opportunity to sell your car effortlessly and get the most out of your investment. Contact us today and let us take care of the rest!
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="{% static './assets/images/sellcar.png' %}" alt="" width="300" height="200" >
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <img src="{% static './assets/images/bookcar.png' %}" alt="" width="300" height="200" >
+        </div>
+        <div class="col-md-8 animate__animated animate__fadeInRight">
+          <h2 class="text-center">Book Car</h2>
+          <p>Our user-friendly online platform enables you to browse available cars, compare prices, and choose the dates and duration of your booking. We prioritize customer satisfaction and ensure that our cars are well-maintained and in excellent condition, providing you with a reliable and comfortable driving experience. Our dedicated team is ready to assist you throughout the booking process, addressing any queries you may have and offering personalized recommendations based on your preferences.
+            
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+{% endblock %}
