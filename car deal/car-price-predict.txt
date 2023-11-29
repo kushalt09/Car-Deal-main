@@ -1,5 +1,5 @@
 Django documentation---->(https://docs.djangoproject.com/en/4.2/)
-<!-------Day 1(Setup)-------->
+<!-------(Setup)-------->
 Create folder where you want your project to be
 Install pipenv
   pip install pipenv
@@ -36,7 +36,7 @@ It will show migration error(it will give error while creating superuser)
 
 
 
-<!-------Day 2(Admin Panel)-------->
+<!-------(Admin Panel)-------->
 	python manage.py superuser
     Give username and password
 Incase you dont like default admin theme. You can customize it too.
@@ -68,7 +68,7 @@ Folder named static will be created.All the files that were hidden while editing
 
 
 
-<!-------Day 3(Webpages in Django app)-------->
+<!-------(Webpages in Django app)-------->
 	python manage.py startapp webpages
 
 mention it in INSTALLED_APPS in setting
